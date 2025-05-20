@@ -34,3 +34,11 @@ git remote add origin git@github.com:yourusername/your-repo.git
 
 # Pull from Remote
 git pull
+
+###Note###
+when i push remotely from master to master >>> There is no pull request needed because GitHub sees it as a fast-forward update — no code review or merging between branches is required
+>>Pull Requests Only Happen When:
+	You create a new branch (e.g. feature-x)
+	Push it to GitHub
+	Then open a pull request to merge it into master (or main)
+###########################################################

@@ -152,9 +152,22 @@ echo $USERNAME
 - Volume Group is a storage pool.
 - Add more PVs to extend VG size.
 - Filesystem must be resized manually.
+---
+### Difference Between `wget` and `curl`
+
+| Feature            | `wget`     | `curl`                     |
+| ------------------ | ---------- | -------------------------- |
+| File download      |  Yes      |  Yes                      |
+| Website download   |  Yes      |  No                       |
+| API interaction    |  No       |  Yes                      |
+| Resuming downloads |  Yes      |  Yes                      |
+| Recursive download |  Yes      |  No                       |
+| Simplicity         |  Easier   |  More options (powerful) |
+| Scripting & APIs   |  Limited |  Best choice              |
+
 
 -----------------------------------------------------------------------------------------------------------------------
-- **Repository Management
+- Repository Management
 # The Primary Repository Configuration file Found in:
 						
 ```
@@ -168,5 +181,14 @@ sudo apt install <package-name>=version
 ```
 sudo apt show <package-name>
 ```
+---
 
-
+### Steps to Download a Package manually
+```
+- find a link to download package file <always ended with (.deb)>
+wget <link>
+- Install the package manually by dpkg (Because it deals with .deb files)
+sudo dpkg -i <.deb file>
+- Fix Dependencies if needed
+sudo apt-get install -f
+```

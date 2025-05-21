@@ -42,3 +42,19 @@ when i push remotely from master to master >>> There is no pull request needed b
 	Push it to GitHub
 	Then open a pull request to merge it into master (or main)
 ###########################################################
+
+#To Show How many files would cleaned
+git clean -n
+git clean -f >> force clean
+
+#To take snapshot from stash
+git stash apply
+
+#To take snapshot from stash and clear the stash
+git stash pop
+
+#To give the stash name when created
+git stash save <name>
+
+#To clear all stash
+git stash clear

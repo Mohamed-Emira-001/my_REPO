@@ -1,5 +1,5 @@
 
-# 🐧 Linux Essentials Guide
+# Linux Essentials Guide
 
 A concise, well-structured reference for key Linux concepts: file systems, user management, permissions, process control, LVM, and more.
 
@@ -153,4 +153,20 @@ echo $USERNAME
 - Add more PVs to extend VG size.
 - Filesystem must be resized manually.
 
----
+-----------------------------------------------------------------------------------------------------------------------
+- **Repository Management
+# The Primary Repository Configuration file Found in:
+						
+```
+sudo nano /etc/apt/source.list
+```
+# To Install Specific Package version
+```
+sudo apt install <package-name>=version
+```
+# Package Information Retrieval
+```
+sudo apt show <package-name>
+```
+
+

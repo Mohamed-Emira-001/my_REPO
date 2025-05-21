@@ -58,3 +58,7 @@ git stash save <name>
 
 #To clear all stash
 git stash clear
+
+##if i want to remove specific commit
+git rebase -i <commit_id>^ 
+	change pick to drop to delete it

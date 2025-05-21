@@ -183,7 +183,7 @@ sudo apt show <package-name>
 ```
 ---
 
-### Steps to Download a Package manually
+# Steps to Download a Package manually
 ```
 - find a link to download package file <always ended with (.deb)>
 wget <link>
@@ -192,3 +192,12 @@ sudo dpkg -i <.deb file>
 - Fix Dependencies if needed
 sudo apt-get install -f
 ```
+---
+# Passwordless SSH
+```
+- Create ssh public and private keys
+ssh-keygen
+- Copy the public key to remote machine
+ssh-copy-id username@hostname or hostip
+- Then test using ssh normally
+

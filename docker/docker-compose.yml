@@ -1,0 +1,129 @@
+version: "3.8"
+services:
+  app1:
+    container_name: app1
+    hostname: app1
+    image: emiradev/devops_upgraded_base_image:v2
+    stdin_open: true # = "-i"
+    tty: true # ="-t"
+    restart: always
+    networks: 
+      - internal
+    volumes:
+      - volume12:/
+
+  app2:
+    container_name: app2
+    hostname: app2
+    image: emiradev/devops_upgraded_base_image:v2
+    stdin_open: true # = "-i"
+    tty: true # ="-t"
+    restart: always
+    networks: 
+      - internal
+    volumes:
+      - volume12:/
+
+  app3:
+    container_name: app3
+    hostname: app3
+    image: emiradev/devops_upgraded_base_image:v2
+    stdin_open: true # = "-i"
+    tty: true # ="-t"
+    restart: always
+    networks: 
+      - external
+    volumes:
+      - volume34:/
+
+  app4:
+    container_name: app4
+    hostname: app4
+    image: emiradev/devops_upgraded_base_image:v2
+    stdin_open: true # = "-i"
+    tty: true # ="-t"
+    restart: always
+    networks: 
+      - external
+    volumes:
+      - volume12:/
+
+
+
+networks:
+  internal:
+    internal: true
+    ipam:
+      config:
+        - subnet: 192.168.100.0/24
+  external:
+    ipam:
+      config:
+        - subnet: 192.168.200.0/24
+version: "3"
+services:
+  app1:
+    container_name: app1
+    hostname: app1
+    image: emiradev/devops_upgraded_base_image:v2
+    stdin_open: true # = "-i"
+    tty: true # ="-t"
+    restart: always
+    networks:
+      - internal
+    volumes:
+      - volume12:/data
+
+  app2:
+    container_name: app2
+    hostname: app2
+    image: emiradev/devops_upgraded_base_image:v2
+    stdin_open: true # = "-i"
+    tty: true # ="-t"
+    restart: always
+    networks:
+      - internal
+    volumes:
+      - volume12:/data #Source..Destination
+
+  app3:
+    container_name: app3
+    hostname: app3
+    image: emiradev/devops_upgraded_base_image:v2
+    stdin_open: true # = "-i"
+    tty: true # ="-t"
+    restart: always
+    networks:
+      - external
+    volumes:
+      - volume34:/data
+
+  app4:
+    container_name: app4
+    hostname: app4
+    image: emiradev/devops_upgraded_base_image:v2
+    stdin_open: true # = "-i"
+    tty: true # ="-t"
+    restart: always
+    networks:
+      - external
+    volumes:
+      - volume34:/data
+
+
+
+networks:
+  internal:
+    internal: true
+    ipam:
+      config:
+        - subnet: 192.168.100.0/24
+        
+  external:
+    ipam:
+      config:
+        - subnet: 192.168.200.0/24
+
+volumes:
+  volume12:
+  volume34:

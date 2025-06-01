@@ -1,0 +1,24 @@
+## This file is instruction for yml file in k8s
+
+
+apiVersion: apps/v1 #Object version >> api-resources
+kind: Deployment #Object version >> api-resources
+metadata:
+  name: example-deployment 
+  label:
+  namespace:
+spec:
+  replicas: #replicaset number ##Note repliaset know pods by its label 
+  selector:
+    matchLabels:
+      app: example
+  template:
+    metadata:
+      labels:
+        app: example
+    spec: ##Object content + hardware <docker>
+      containers:
+      - name: example-container
+        image: example-image
+        ports:
+        - containerPort: 8080
